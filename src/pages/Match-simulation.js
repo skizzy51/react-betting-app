@@ -149,8 +149,8 @@ export function MatchSim () {
             {
                 simulation &&
                 <div className="simulation">
-                    <motion.h2 initial={{y:'-100vh'}} animate={{y:0}} transition={{delay:.9}} className="header">{simulationPeriod}</motion.h2>
-                    <motion.div initial={{scale:0}} animate={{scale:1}} className="simulation-cont">
+                    <motion.h2 initial={{y:'-100vh'}} animate={{y:0}} exit={{y:'-100vh'}} transition={{delay:.9}} className="header">{simulationPeriod}</motion.h2>
+                    <motion.div initial={{scale:0}} animate={{scale:1}} exit={{scale:0}} className="simulation-cont">
                         <motion.div className="player">1</motion.div>
                         
                         <motion.div animate={{left:'50%'}} transition={{duration:6, delay:1}} initial={{top:'5%', left:'15%'}} className="player">22</motion.div>
