@@ -1,0 +1,71 @@
+@import './mixins';
+@import './variables';
+
+.deposit-page{
+    background-color: rgba(0, 217, 0, 0.196);
+    height: 100vh;
+    @include justify-content-no-align(center);
+
+    .deposit-page-cont{
+        width: 30vw;
+        height: 80vh;
+        border-radius: 15px;
+        margin-top: 10vh;
+        color: black;
+        background-color: white;
+
+        & h2{
+            margin: 2rem 0;
+            text-align: center;
+        }
+
+        .inputs{
+            padding: 0 1.5rem
+        }
+
+        .deposit-input{
+            @include flex-direction(column);
+
+            & b{
+                margin: 0.5rem 0;
+            }
+            & input{
+                height: 3rem;
+                padding-left: .5rem;
+            }
+        }
+        .deposit-btn{
+            cursor: pointer;
+            @include justify-content(center);
+            margin: 0 auto;
+            margin-top: 2rem;
+            border: none;
+            color: white;
+            background-color: $greenButton;
+            border-radius: 10px;
+            padding: 1rem 0;
+            width: 70%;
+            font-size: 1.2rem;
+            transition: $backgroundColorTransition;
+            &:hover{
+                background-color: $greenColorHoverChange;
+            }
+        }
+    }
+}
+
+@media (max-width: 425px) {
+    .deposit-page{
+        .deposit-page-cont{
+            width: 100vw;
+        }
+    }
+}
+
+@media (min-width: 425px) and (max-width: 850px) {
+    .deposit-page{
+        .deposit-page-cont{
+            width: 70vw;
+        }
+    }
+}

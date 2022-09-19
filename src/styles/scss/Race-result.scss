@@ -1,0 +1,170 @@
+@import './mixins';
+@import './variables';
+
+.race-result-page{
+    background-image: url(/public/images/jeff-griffith-PaIDqj8otls-unsplash.jpg);
+    background-position: top;
+    background-repeat: no-repeat;
+    background-size: cover;
+    height: 100vh;
+    width: 100vw;
+    position: relative;
+    z-index: 1;
+    
+    &::after{
+        position: absolute;
+        content: '';
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        background-color: rgba(0, 0, 0, 0.333);
+        z-index: -1;
+    }
+
+    .race{
+        position: absolute;
+        background-color: white;
+        width: 60vw;
+        margin: 0 auto;
+        top: 20vh;
+        right: 0;
+        left: 0;
+        border-radius: 20px;
+        padding: 1.5rem 0;
+
+        .horses-cont{
+            width: 90%;
+            height: 100%;
+            @include flex-direction(column);
+            margin: 0 auto;
+            overflow: hidden;
+            
+            .track{
+                @include alignCenterWithoutJustifyContent;
+                width: 100%;
+                height: 1.5rem;
+                background-color: rgb(215, 215, 215);
+                border-radius: 1rem;
+                margin: 2.5rem auto;
+
+                .horse{
+                    width: 3rem;
+                    height: 3rem;
+                    border-radius: 50%;
+                    padding: .5rem;
+                }
+            }
+        }
+    }
+    .result-cont{
+        position: absolute;
+        width: 100vw;
+        height: 100vh;
+        background-color: rgba(0, 0, 0, 0.711);
+        top: 0;
+        z-index: 3;
+
+        .result{
+            position: relative;
+            width: 50vw;
+            height: 72vh;
+            @include flex-direction(column);
+            margin: 0 auto;
+            top: 15vh;
+            background-color: white;
+            border-radius: 15px;
+
+            .first-place{
+                margin: 0 auto;
+                width: 80%;
+                @include justify-content(center);
+                flex-direction: column;
+                & img{
+                    width: clamp(18rem, 21vw, 21rem);
+                }
+            }
+            .first-third{
+                @include justify-content(space-around);
+                margin: 1.5rem 0;
+                padding: 0 1rem;
+                font-size: 1.2rem;
+            }
+            .you-win{
+                color: $greenButton;
+                text-align: center;
+                font-size: 2.3rem;
+                margin-bottom: 1.2rem;
+            }
+            .you-lose{
+                color: red;
+                text-align: center;
+                font-size: 2.3rem;
+                margin-bottom: 1.2rem;
+            }
+            .overall-placement-result{
+                @include flex-direction(column);
+                align-items: center;
+                padding: 0 1rem;
+                & p{
+                    font-size: 1.4rem;
+                    font-weight: 400;
+                    padding: .6rem 0;
+                    color: teal;
+                }
+            }
+            .overall-placement-selection{
+                @include justify-content(space-evenly);
+                padding: 0 1rem;
+                margin-top: 1rem;
+            }
+        }
+    }
+}
+
+@media (max-width: 768px) {
+    .race-result-page{
+        .race{
+            width: 90vw;
+            .horses-cont{
+                .track{
+                    width: 85%;
+                }
+            }
+
+        }
+        .result-cont{
+            .result{
+                width: clamp(19rem, 95vw, 21rem);
+
+                & h1{
+                    font-size: 1.2rem;
+                }
+                .first-third{
+                    margin: 1rem 0;
+                    & p{
+                        font-size: clamp(1rem, 5.3vw, 1.1rem);
+                    }
+                }
+                & h2{
+                    margin-top: 0.5rem!important;
+                }
+                .you-win, .you-lose{
+                    font-size: 1.5rem;
+                }
+            }
+        }
+    }
+}
+@media (max-width: 438px) {
+    .race-result-page{
+        .race{
+            .horses-cont{
+                .track{
+                    margin: 2rem 0;
+                }
+            }
+
+        }
+    }
+}

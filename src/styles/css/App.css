@@ -1,0 +1,69 @@
+@import url("https://fonts.googleapis.com/css2?family=Comfortaa:wght@600&family=Lexend+Deca:wght@200;400&display=swap");
+* {
+  margin: 0;
+  padding: 0;
+  font-family: "Lexend Deca", sans-serif;
+}
+
+.navbar {
+  background-color: rgba(0, 0, 0, 0.415);
+  height: 10vh;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  opacity: 90%;
+  padding: 1rem 1.5rem;
+}
+.navbar .navbar-logo {
+  width: 10rem;
+  cursor: pointer;
+}
+.navbar button {
+  border: none;
+  cursor: pointer;
+  color: white;
+  background-color: #009444;
+  padding: 0.7rem 1rem;
+  height: -webkit-fit-content;
+  height: -moz-fit-content;
+  height: fit-content;
+  width: -webkit-fit-content;
+  width: -moz-fit-content;
+  width: fit-content;
+  transition: background-color 0.3s ease-in-out;
+}
+.navbar button:hover {
+  background-color: #005829;
+}
+.navbar .dropdown-close {
+  display: none;
+}
+.navbar .dropdown-open {
+  color: white;
+  background-color: #009444;
+  position: absolute;
+  top: 130%;
+  width: 100%;
+  font-size: 0.75rem;
+}
+.navbar .dropdown-open .dropdown-btn {
+  cursor: pointer;
+  padding: 0.9rem 0.4rem;
+  transition: background-color 0.3s ease-in-out;
+}
+.navbar .dropdown-open .dropdown-btn:hover {
+  background-color: #005829;
+}
+
+@media (max-width: 768px) {
+  .navbar {
+    padding: 0.5rem 1rem;
+  }
+  .navbar .navbar-logo {
+    width: 8rem;
+  }
+  .navbar button {
+    font-size: 0.7rem;
+    padding: 0.5rem 0.8rem;
+  }
+}/*# sourceMappingURL=App.css.map */

@@ -1,0 +1,321 @@
+.horse-racing-page {
+  background-image: url(/public/images/mathew-schwartz-5qRWQEdK7Sg-unsplash.jpg);
+  height: 100vh;
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: cover;
+  position: relative;
+}
+.horse-racing-page::after {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: black;
+  opacity: 60%;
+}
+.horse-racing-page .racing-cont {
+  width: 80vw;
+  margin: 0 auto;
+  position: relative;
+  top: 20vh;
+  z-index: 1;
+}
+.horse-racing-page .racing-cont .head {
+  color: white;
+  text-align: center;
+}
+.horse-racing-page .racing-cont .head p {
+  margin: 1rem 0;
+  font-size: 1.2rem;
+}
+.horse-racing-page .racing-cont .horse-bet-type {
+  margin-top: 5rem;
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+}
+.horse-racing-page .racing-cont .horse-bet-type button {
+  cursor: pointer;
+  border: none;
+  padding: 1rem 1.5rem;
+  font-size: 1rem;
+  color: white;
+  background-color: #009444;
+  border-radius: 15px;
+  transition: background-color 0.3s ease-in-out;
+}
+.horse-racing-page .racing-cont .horse-bet-type button:hover {
+  background-color: #005829;
+}
+.horse-racing-page .single-placement {
+  position: absolute;
+  width: 100vw;
+  height: 100vh;
+  z-index: 1;
+  color: white;
+}
+.horse-racing-page .single-placement .single-placement-cont {
+  margin: 0 auto;
+  width: 90vw;
+  margin-top: 16vh;
+  display: flex;
+  flex-direction: column;
+}
+.horse-racing-page .single-placement .single-placement-cont h1 {
+  text-align: center;
+}
+.horse-racing-page .single-placement .single-placement-cont .horse-bets {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  width: 100%;
+  margin-top: 4vh;
+}
+.horse-racing-page .single-placement .single-placement-cont .horse-select {
+  cursor: pointer;
+  width: 20%;
+  height: 24rem;
+  background-color: white;
+  color: black;
+  border-radius: 10px;
+  overflow: hidden;
+  box-shadow: rgba(0, 0, 0, 0.56) 0px 22px 70px 4px;
+}
+.horse-racing-page .single-placement .single-placement-cont .horse-select div {
+  padding: 0.5rem;
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+}
+.horse-racing-page .single-placement .single-placement-cont .horse-select img {
+  width: 100%;
+  height: 10rem;
+  border-radius: 5px;
+}
+.horse-racing-page .single-placement .single-placement-cont .horse-select p {
+  height: 8rem;
+  overflow-y: auto;
+  text-align: center;
+  margin: 0.5rem 0;
+}
+.horse-racing-page .single-placement .single-placement-cont .horse-select span {
+  margin: 0.5rem 0;
+  color: darkslategrey;
+  font-weight: bold;
+}
+.horse-racing-page .single-placement .single-placement-cont .horse-select input {
+  width: 15px;
+  height: 15px;
+}
+.horse-racing-page .single-placement .single-placement-cont .horse-select select {
+  width: 50%;
+  height: 2rem;
+}
+.horse-racing-page .single-placement .single-placement-cont .options {
+  margin-top: 3rem;
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+.horse-racing-page .single-placement .single-placement-cont .options button {
+  cursor: pointer;
+  border: none;
+  color: white;
+  padding: 1rem;
+  background-color: #009444;
+  transition: background-color 0.3s ease-in-out;
+  border-radius: 15px;
+}
+.horse-racing-page .single-placement .single-placement-cont .options button:hover {
+  background-color: #005829;
+}
+.horse-racing-page .overall-placement {
+  width: 90vw;
+  margin: 0 auto;
+  position: relative;
+  top: 20vh;
+  z-index: 1;
+  color: white;
+}
+.horse-racing-page .confirm-bet-open {
+  position: absolute;
+  width: 100vw;
+  height: 100vh;
+  background-color: rgba(0, 0, 0, 0.711);
+  top: 0;
+  z-index: 3;
+}
+.horse-racing-page .confirm-bet-open .confirm-bet-cont {
+  display: flex;
+  flex-direction: column;
+  position: relative;
+  z-index: 1;
+  margin: auto;
+  width: 40vw;
+  height: 65vh;
+  background-color: white;
+  border-radius: 15px;
+  top: 20vh;
+}
+.horse-racing-page .confirm-bet-open .confirm-bet-cont .head {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin: 1rem 2rem;
+  margin-bottom: 0.5rem;
+}
+.horse-racing-page .confirm-bet-open .confirm-bet-cont .body {
+  display: flex;
+  flex-direction: column;
+  margin: 0 auto;
+  margin-top: 3rem;
+  width: 80%;
+}
+.horse-racing-page .confirm-bet-open .confirm-bet-cont .body .input-cont {
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+  align-self: center;
+}
+.horse-racing-page .confirm-bet-open .confirm-bet-cont .body .input-cont input {
+  width: 40%;
+  height: 2.5rem;
+  font-size: 1.3rem;
+  padding-left: 0.5rem;
+}
+.horse-racing-page .confirm-bet-open .confirm-bet-cont .body .input-cont button {
+  width: 14%;
+  border: none;
+  color: white;
+  background-color: rgb(0, 100, 0);
+  cursor: pointer;
+  font-size: 0.9rem;
+}
+.horse-racing-page .confirm-bet-open .confirm-bet-cont .body .price-ranges {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-top: 2rem;
+}
+.horse-racing-page .confirm-bet-open .confirm-bet-cont .body .price-ranges button {
+  padding: 0.7rem 1rem;
+  cursor: pointer;
+}
+.horse-racing-page .confirm-bet-open .confirm-bet-cont .odds-win {
+  width: 80%;
+  margin: 0 auto;
+  margin-top: 2rem;
+}
+.horse-racing-page .confirm-bet-open .confirm-bet-cont .odds-win .total-odds, .horse-racing-page .confirm-bet-open .confirm-bet-cont .odds-win .total-win {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-top: 1.5rem;
+}
+.horse-racing-page .confirm-bet-open .confirm-bet-cont .place-bet {
+  cursor: pointer;
+  width: -webkit-fit-content;
+  width: -moz-fit-content;
+  width: fit-content;
+  margin-top: 2rem;
+  border: none;
+  color: white;
+  padding: 1rem 1.5rem;
+  background-color: #009444;
+  transition: background-color 0.3s ease-in-out;
+  border-radius: 10px;
+}
+.horse-racing-page .confirm-bet-open .confirm-bet-cont .place-bet:hover {
+  background-color: #005829;
+}
+.horse-racing-page .confirm-bet-open .confirm-bet-cont .place-bet-inactive {
+  cursor: not-allowed;
+  width: -webkit-fit-content;
+  width: -moz-fit-content;
+  width: fit-content;
+  margin: 0 auto;
+  margin-top: 2rem;
+  border: none;
+  color: white;
+  padding: 1rem 1.5rem;
+  background-color: rgb(177, 177, 177);
+  border-radius: 10px;
+}
+.horse-racing-page .confirm-bet-close {
+  display: none;
+}
+
+@media (max-width: 620px) {
+  .horse-racing-page .racing-cont .horse-bet-type {
+    flex-direction: column;
+    margin-top: 0rem;
+  }
+  .horse-racing-page .racing-cont .horse-bet-type button {
+    margin-top: 1rem;
+  }
+}
+@media (max-width: 768px) {
+  .horse-racing-page .racing-cont {
+    top: 13vh;
+  }
+  .horse-racing-page .racing-cont .head h1 {
+    font-size: clamp(1.5rem, 7vw, 1.8rem);
+  }
+  .horse-racing-page .racing-cont .head p {
+    font-size: clamp(1rem, 5vw, 1.15rem);
+  }
+  .horse-racing-page .racing-cont .horse-bet-type {
+    width: 100%;
+  }
+}
+@media (max-width: 950px) {
+  .horse-racing-page .single-placement .single-placement-cont {
+    margin-top: 14vh;
+  }
+  .horse-racing-page .single-placement .single-placement-cont h1 {
+    font-size: clamp(1.2rem, 6vw, 1.4rem);
+  }
+  .horse-racing-page .single-placement .single-placement-cont .horse-bets {
+    flex-wrap: wrap;
+    justify-content: center;
+    max-height: 60vh;
+    overflow-y: auto;
+  }
+  .horse-racing-page .single-placement .single-placement-cont .horse-select {
+    flex-shrink: 0;
+    width: 17rem;
+    margin: 0.5rem;
+  }
+  .horse-racing-page .single-placement .single-placement-cont .options {
+    margin-top: 1rem;
+  }
+  .horse-racing-page .confirm-bet-open .confirm-bet-cont {
+    width: clamp(18rem, 80vw, 21rem);
+    overflow: hidden;
+  }
+  .horse-racing-page .confirm-bet-open .confirm-bet-cont .head {
+    margin: 1rem;
+  }
+  .horse-racing-page .confirm-bet-open .confirm-bet-cont .head h3 {
+    font-size: 1rem;
+  }
+  .horse-racing-page .confirm-bet-open .confirm-bet-cont .body {
+    margin-top: 1rem;
+    width: 90%;
+  }
+  .horse-racing-page .confirm-bet-open .confirm-bet-cont .body .price-ranges button {
+    flex-shrink: 0;
+    padding: 0.5rem;
+  }
+  .horse-racing-page .confirm-bet-open .confirm-bet-cont .odds-win {
+    margin: 0 auto;
+    width: 85%;
+  }
+  .horse-racing-page .confirm-bet-open .confirm-bet-cont .odds-win .total-win h2 {
+    font-size: clamp(1.3rem, 6.5vw, 1.5rem);
+  }
+}/*# sourceMappingURL=Horse-racing.css.map */

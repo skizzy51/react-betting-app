@@ -1,0 +1,18 @@
+[
+    {"name" : "Real Madrid", "strength" : 1, "shortName" : "RMA", "number" : 1},
+    {"name" : "Barcelona", "strength" : 2, "shortName" : "BAR", "number" : 2},
+    {"name" : "Man City", "strength" : 1, "shortName" : "MCI", "number" : 3},
+    {"name" : "Liverpool", "strength" : 1, "shortName" : "LIV", "number" : 4},
+    {"name" : "Juventus", "strength" : 2, "shortName" : "JUV", "number" : 5},
+    {"name" : "Chelsea", "strength" : 2, "shortName" : "CHE", "number" : 6},
+    {"name" : "Man United", "strength" : 3, "shortName" : "MUN", "number" : 7},
+    {"name" : "Tottenham", "strength" : 3, "shortName" : "TOT", "number" : 8},
+    {"name" : "AC Milan", "strength" : 3, "shortName" : "ACM", "number" : 9},
+    {"name" : "Inter M", "strength" : 3, "shortName" : "INT", "number" : 10},
+    {"name" : "PSG", "strength" : 1, "shortName" : "PSG", "number" : 11},
+    {"name" : "Atletico M", "strength" : 3, "shortName" : "ATM", "number" : 12},
+    {"name" : "Bayern M", "strength" : 1, "shortName" : "BAY", "number" : 13},
+    {"name" : "Arsenal", "strength" : 3, "shortName" : "ARS", "number" : 14},
+    {"name" : "Sevilla", "strength" : 3, "shortName" : "SEV", "number" : 15},
+    {"name" : "Dortmund", "strength" : 3, "shortName" : "DOR", "number" : 16}
+]

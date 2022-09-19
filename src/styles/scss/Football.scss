@@ -1,0 +1,244 @@
+@import './mixins';
+@import './variables';
+
+.football-page{
+    background-image: url(/public/images/ji-mmm-yy-Jr5x1CAWySo-unsplash.jpg);
+    height: 100vh;
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: cover;
+    position: relative;
+    z-index: 1;
+
+    &::after{
+        content: '';
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        background-color: black;
+        opacity: 50%;
+        z-index: -1;
+    }
+    .football-cont{
+        position: relative;
+        background-color: white;
+        width: 80vw;
+        height: 75vh;
+        margin: 0 auto;
+        top: 17vh;
+        border-radius: 20px;
+
+        .teams{
+            height: 75%;
+            overflow-y: auto;
+            overflow-x: hidden;
+            margin: 0 2rem;
+            padding-top: 2rem;
+            border-bottom: 1px solid #000;
+
+            .team{
+                @include justify-content(space-between);
+                padding: 1rem 0;
+                border-top: 1px solid rgba(0, 0, 0, 0.179);
+
+                .team-name{
+                    width: 40%;
+                    text-align: center;
+                    font-size: 1.1rem;
+                }
+                .odd-select{
+                    width: 60%;
+                    @include justify-content(space-between);
+                    .odds{
+                        cursor: pointer;
+                        border: none;
+                        width: 25%;
+                        color: white;
+                        padding: .7rem 0;
+                        background-color: $greenButton;
+                        transition: $backgroundColorTransition;
+                        &:hover{
+                            background-color: $greenColorHoverChange;
+                        }
+                    }
+                    .selected-odd{
+                        cursor: pointer;
+                        border: none;
+                        width: 25%;
+                        color: white;
+                        padding: .7rem 0;
+                        transition: $backgroundColorTransition;
+                        background-color: $greenColorHoverChange;
+                    }
+                }
+            }
+        }
+        .next{
+            cursor: pointer;
+            border: none;
+            color: white;
+            padding: .8rem 2rem;
+            font-size: 1.1rem;
+            display: flex;
+            margin: 0 auto;
+            margin-top: 1.5rem;
+            border-radius: 2rem;
+            background-color: $greenButton;
+            transition: $backgroundColorTransition;
+            &:hover{
+                background-color: $greenColorHoverChange;
+            }
+        }
+    }
+    .confirm-bet-open{
+        position: absolute;
+        width: 100vw;
+        height: 100vh;
+        background-color: rgba(0, 0, 0, 0.711);
+        top: 0;
+        z-index: 3;
+
+        .confirm-bet-cont{
+            @include flex-direction(column);
+            position: relative;
+            z-index: 1;
+            margin: auto;
+            width: 40vw;
+            height : 65vh;
+            background-color : white;
+            border-radius : 15px;
+            top: 20vh;
+    
+            .head{
+                @include justify-content(space-between);
+                margin: 1rem 2rem;
+                margin-bottom: 0.5rem;
+            }
+            .body{
+                @include flex-direction(column);
+                margin: 0 auto;
+                margin-top: 3rem;
+                width: 80%;
+                
+                .input-cont{
+                    width: 100%;
+                    @include justify-content-no-align(space-between);
+                    align-self: center;
+
+                    & input{
+                        width: 40%;
+                        height: 2.5rem;
+                        font-size: 1.3rem;
+                        padding-left: .5rem;
+                    }
+                    & button{
+                        width: 14%;
+                        border: none;
+                        color: white;
+                        background-color: rgb(0, 100, 0);
+                        cursor: pointer;
+                        font-size: .9rem;
+                    }
+                }
+                .price-ranges{
+                    @include justify-content(space-between);
+                    margin-top: 2rem;
+                    & button{
+                        padding: .7rem 1rem;
+                        cursor: pointer;
+                    }
+                }
+            }
+            .odds-win{
+                width: 80%;
+                margin: 0 auto;
+                margin-top: 2rem;
+                .total-odds, .total-win{
+                    @include justify-content(space-between);
+                    margin-top: 1.5rem;
+                }
+            }
+            .place-bet{
+                cursor: pointer;
+                width: fit-content;
+                margin-top: 2rem;
+                border: none;
+                color: white;
+                padding: 1rem 1.5rem;
+                background-color: $greenButton;
+                transition: $backgroundColorTransition;
+                border-radius: 10px;
+                &:hover{
+                    background-color: $greenColorHoverChange;
+                }
+            }
+            .place-bet-inactive{
+                cursor: not-allowed;
+                width: fit-content;
+                margin: 0 auto;
+                margin-top: 2rem;
+                border: none;
+                color: white;
+                padding: 1rem 1.5rem;
+                background-color: rgb(177, 177, 177);
+                border-radius: 10px;
+            }
+
+        }
+    }
+    .confirm-bet-close{
+        display: none;
+    }
+}
+
+@media (max-width: 768px) {
+    .football-page{
+        .football-cont{
+            width: 100vw;
+            .teams{
+                margin: 0 1rem;
+                .team .team-name{
+                    font-size: clamp(.9rem, 4.5vw, 1.1rem);
+                }
+            }
+        }
+    }
+}
+
+@media (max-width: 950px) {
+    .football-page{
+        .confirm-bet-open{
+            .confirm-bet-cont{
+                width: clamp(18rem, 80vw, 21rem);
+                overflow: hidden;
+
+                .head{
+                    margin: 1rem;
+                    & h3{
+                        font-size: 1rem;
+                    }
+                }
+                .body{
+                    margin-top: 1rem;
+                    width: 90%;
+
+                    .price-ranges{
+                        & button{
+                            flex-shrink: 0;
+                            padding: .5rem;
+                        }
+                    }
+                }
+                .odds-win{
+                    margin: 0 auto;
+                    width: 85%;
+                    .total-win h2{
+                        font-size: clamp(1.3rem, 6.5vw, 1.5rem);
+                    }
+                }
+            }
+        }
+    }
+}

@@ -1,0 +1,101 @@
+@import './mixins';
+@import './variables';
+
+.sign-in-page{
+    background-color: rgba(0, 217, 0, 0.196);
+    position: relative;
+    height: 100vh;
+    @include justify-content-no-align(center);
+
+    .sign-in-cont{
+        width: 30vw;
+        margin-top: 7vh;
+        color: black;
+        position: absolute;
+        & h3{
+            font-size: 2.7rem;
+            margin: 1rem 0;
+            text-align: center;
+        }
+    }
+
+    .sign-up-cont{
+        display: none;
+        width: 30vw;
+        margin-top: 7vh;
+        color: black;
+        position: absolute;
+        & h3{
+            font-size: 2.7rem;
+            margin: 1rem 0;
+            text-align: center;
+        }
+    }
+
+    .sign-in{
+        background-color: white;
+        border-radius: 10px;
+        @include flex-direction(column);
+        justify-content: center;
+
+        .input-cont{
+            @include flex-direction(column);
+            margin: .5rem 0;
+            
+            & b{
+                margin: 0.5rem 0;
+            }
+            & input{
+                padding: .7rem .5rem;
+            }
+        }
+        .sign-in-button{
+            cursor: pointer;
+            margin: 0 auto;
+            margin-top: 2rem;
+            border: none;
+            color: white;
+            background-color: $greenButton;
+            border-radius: 10px;
+            padding: 1rem 0;
+            width: 70%;
+            font-size: 1.2rem;
+            transition: $backgroundColorTransition;
+            &:hover{
+                background-color: $greenColorHoverChange;
+            }
+        }
+        & p{
+            margin: .5rem 0;
+            text-align: center;
+            margin-top: 1rem;
+
+            & span{
+                cursor: pointer;
+                color: blue;
+            }
+        }
+    }
+}
+
+@media (max-width: 425px) {
+    .sign-in-page{
+        .sign-in-cont, .sign-up-cont{
+            width: 100vw;
+            margin-top: 5vh;
+        }
+    }
+}
+
+@media (min-width: 425px) and (max-width: 900px) {
+    .sign-in-page{
+        .sign-in-cont, .sign-up-cont{
+            width: 100vw;
+            margin-top: 3vh;
+            .sign-in{
+                width: 60%;
+                margin: 0 auto;
+            }
+        }
+    }
+}

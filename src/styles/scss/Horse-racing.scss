@@ -1,0 +1,341 @@
+@import './mixins';
+@import './variables';
+
+.horse-racing-page{
+    background-image: url(/public/images/mathew-schwartz-5qRWQEdK7Sg-unsplash.jpg);
+    height: 100vh;
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: cover;
+    position: relative;
+
+    &::after{
+        content: '';
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        background-color: black;
+        opacity: 60%;
+    }
+
+    .racing-cont{
+        width: 80vw;
+        margin: 0 auto;
+        position: relative;
+        top: 20vh;
+        z-index: 1;
+
+        .head{
+            color: white;
+            text-align: center;
+            & p{
+                margin: 1rem 0;
+                font-size: 1.2rem;
+            }
+        }
+        .horse-bet-type{
+            margin-top: 5rem;
+            @include justify-content(space-around);
+
+            & button {
+                cursor: pointer;
+                border: none;
+                padding: 1rem 1.5rem;
+                font-size: 1rem;
+                color: white;
+                background-color: $greenButton;
+                border-radius: 15px;
+                transition: $backgroundColorTransition;
+                &:hover{
+                    background-color: $greenColorHoverChange;
+                }
+            }
+        }
+    }
+
+    .single-placement{
+        position: absolute;
+        width: 100vw;
+        height: 100vh;
+        z-index: 1;
+        color: white;
+        
+        .single-placement-cont{
+            margin: 0 auto;
+            width: 90vw;
+            margin-top: 16vh;
+            @include flex-direction(column);
+
+            & h1{
+                text-align: center;
+            }
+            .horse-bets{
+                @include justify-content(space-between);
+                width: 100%;
+                margin-top: 4vh;
+            }
+            .horse-select{
+                cursor: pointer;
+                width: 20%;
+                height: 24rem;
+                background-color: white;
+                color: black;
+                border-radius: 10px;
+                overflow: hidden;
+                box-shadow: rgba(0, 0, 0, 0.56) 0px 22px 70px 4px;
+    
+                & div{
+                    padding: .5rem;
+                    display: flex;
+                    align-items: center;
+                    flex-direction: column;
+                }
+                & img{
+                    width: 100%;
+                    height: 10rem;
+                    border-radius: 5px;
+                }
+                & p{
+                    height: 8rem;
+                    overflow-y: auto;
+                    text-align: center;
+                    margin: .5rem 0;
+                }
+                & span{
+                    margin: .5rem 0;
+                    color: darkslategrey;
+                    font-weight: bold;
+                }
+                & input{
+                    width: 15px;
+                    height: 15px;
+                }
+                & select{
+                    width: 50%;
+                    height: 2rem;
+                }
+            }
+            .options{
+                margin-top: 3rem;
+                width: 100%;
+                @include justify-content(space-between);
+    
+                & button{
+                    cursor: pointer;
+                    border: none;
+                    color: white;
+                    padding: 1rem;
+                    background-color: $greenButton;
+                    transition: $backgroundColorTransition;
+                    border-radius: 15px;
+                    &:hover{
+                        background-color: $greenColorHoverChange;
+                    }
+                }
+            }
+        }
+
+    }
+    .overall-placement{
+        width: 90vw;
+        margin: 0 auto;
+        position: relative;
+        top: 20vh;
+        z-index: 1;
+        color: white;
+    }
+    
+
+    .confirm-bet-open{
+        position: absolute;
+        width: 100vw;
+        height: 100vh;
+        background-color: rgba(0, 0, 0, 0.711);
+        top: 0;
+        z-index: 3;
+
+        .confirm-bet-cont{
+            @include flex-direction(column);
+            position: relative;
+            z-index: 1;
+            margin: auto;
+            width: 40vw;
+            height : 65vh;
+            background-color : white;
+            border-radius : 15px;
+            top: 20vh;
+    
+            .head{
+                @include justify-content(space-between);
+                margin: 1rem 2rem;
+                margin-bottom: 0.5rem;
+            }
+            .body{
+                @include flex-direction(column);
+                margin: 0 auto;
+                margin-top: 3rem;
+                width: 80%;
+                
+                .input-cont{
+                    width: 100%;
+                    @include justify-content-no-align(space-between);
+                    align-self: center;
+
+                    & input{
+                        width: 40%;
+                        height: 2.5rem;
+                        font-size: 1.3rem;
+                        padding-left: .5rem;
+                    }
+                    & button{
+                        width: 14%;
+                        border: none;
+                        color: white;
+                        background-color: rgb(0, 100, 0);
+                        cursor: pointer;
+                        font-size: .9rem;
+                    }
+                }
+                .price-ranges{
+                    @include justify-content(space-between);
+                    margin-top: 2rem;
+                    & button{
+                        padding: .7rem 1rem;
+                        cursor: pointer;
+                    }
+                }
+            }
+            .odds-win{
+                width: 80%;
+                margin: 0 auto;
+                margin-top: 2rem;
+                .total-odds, .total-win{
+                    @include justify-content(space-between);
+                    margin-top: 1.5rem;
+                }
+            }
+            .place-bet{
+                cursor: pointer;
+                width: fit-content;
+                margin-top: 2rem;
+                border: none;
+                color: white;
+                padding: 1rem 1.5rem;
+                background-color: $greenButton;
+                transition: $backgroundColorTransition;
+                border-radius: 10px;
+                &:hover{
+                    background-color: $greenColorHoverChange;
+                }
+            }
+            .place-bet-inactive{
+                cursor: not-allowed;
+                width: fit-content;
+                margin: 0 auto;
+                margin-top: 2rem;
+                border: none;
+                color: white;
+                padding: 1rem 1.5rem;
+                background-color: rgb(177, 177, 177);
+                border-radius: 10px;
+            }
+        }
+    }
+    .confirm-bet-close{
+        display: none;
+    }
+}
+
+@media (max-width: 620px) {
+    .horse-racing-page{
+        .racing-cont{
+            .horse-bet-type{
+                flex-direction: column;
+                margin-top: 0rem;
+                & button{
+                    margin-top: 1rem;
+                }
+            }
+        }
+    }
+}
+
+@media (max-width: 768px) {
+    .horse-racing-page{
+        .racing-cont{
+            top: 13vh;
+
+            .head{
+                & h1{
+                    font-size: clamp(1.5rem, 7vw, 1.8rem);
+                }
+                & p{
+                    font-size: clamp(1rem, 5vw, 1.15rem);
+                }
+            }
+            .horse-bet-type{
+                width: 100%;
+            }
+        }
+    }
+}
+
+@media (max-width: 950px) {
+    .horse-racing-page{
+        .single-placement{
+            .single-placement-cont{
+                margin-top: 14vh;
+                & h1{
+                    font-size: clamp(1.2rem, 6vw, 1.4rem);
+                }
+                .horse-bets{
+                    flex-wrap: wrap;
+                    justify-content: center;
+                    max-height: 60vh;
+                    overflow-y: auto;
+                }
+                .horse-select{
+                    flex-shrink: 0;
+                    width: 17rem;
+                    margin: .5rem;
+                }
+                .options{
+                    margin-top: 1rem;
+                }
+            }
+        }
+        .confirm-bet-open{
+            .confirm-bet-cont{
+                width: clamp(18rem, 80vw, 21rem);
+                overflow: hidden;
+
+                .head{
+                    margin: 1rem;
+                    & h3{
+                        font-size: 1rem;
+                    }
+                }
+                .body{
+                    margin-top: 1rem;
+                    width: 90%;
+
+                    .price-ranges{
+                        & button{
+                            flex-shrink: 0;
+                            padding: .5rem;
+                        }
+                    }
+                }
+                .odds-win{
+                    margin: 0 auto;
+                    width: 85%;
+                    .total-win h2{
+                        font-size: clamp(1.3rem, 6.5vw, 1.5rem);
+                    }
+                }
+            }
+        }
+    }
+}

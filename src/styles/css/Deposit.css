@@ -1,0 +1,62 @@
+.deposit-page {
+  background-color: rgba(0, 217, 0, 0.196);
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+}
+.deposit-page .deposit-page-cont {
+  width: 30vw;
+  height: 80vh;
+  border-radius: 15px;
+  margin-top: 10vh;
+  color: black;
+  background-color: white;
+}
+.deposit-page .deposit-page-cont h2 {
+  margin: 2rem 0;
+  text-align: center;
+}
+.deposit-page .deposit-page-cont .inputs {
+  padding: 0 1.5rem;
+}
+.deposit-page .deposit-page-cont .deposit-input {
+  display: flex;
+  flex-direction: column;
+}
+.deposit-page .deposit-page-cont .deposit-input b {
+  margin: 0.5rem 0;
+}
+.deposit-page .deposit-page-cont .deposit-input input {
+  height: 3rem;
+  padding-left: 0.5rem;
+}
+.deposit-page .deposit-page-cont .deposit-btn {
+  cursor: pointer;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin: 0 auto;
+  margin-top: 2rem;
+  border: none;
+  color: white;
+  background-color: #009444;
+  border-radius: 10px;
+  padding: 1rem 0;
+  width: 70%;
+  font-size: 1.2rem;
+  transition: background-color 0.3s ease-in-out;
+}
+.deposit-page .deposit-page-cont .deposit-btn:hover {
+  background-color: #005829;
+}
+
+@media (max-width: 425px) {
+  .deposit-page .deposit-page-cont {
+    width: 100vw;
+  }
+}
+@media (min-width: 425px) and (max-width: 850px) {
+  .deposit-page .deposit-page-cont {
+    width: 70vw;
+  }
+}/*# sourceMappingURL=Deposit.css.map */
