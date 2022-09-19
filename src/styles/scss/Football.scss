@@ -146,7 +146,8 @@
                     @include justify-content(space-between);
                     margin-top: 2rem;
                     & button{
-                        padding: .7rem 1rem;
+                        width: 20%;
+                        height: 3rem;
                         cursor: pointer;
                     }
                 }

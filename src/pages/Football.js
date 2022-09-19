@@ -6,6 +6,7 @@ import { FontAwesomeIcon } from "@fortawesome/react-fontawesome"
 import { faTimes } from "@fortawesome/free-solid-svg-icons"
 import { Valuables } from "../App"
 import { Link } from "react-router-dom"
+import { Loading } from '../components/Loading'
 import '../styles/css/Football.css'
 const teams = require('../data/teams.json')
 
@@ -20,6 +21,13 @@ export function Football () {
     const [confirmBet, setConfirmBet] = useState('confirm-bet-close')
     const [stake, setStake] = useState(100)
     const [totalOdds, setTotalOdds] = useState(0)
+    const [loading, setLoading] = useState(true)
+
+    useEffect(()=>{
+        setTimeout(() => {
+            setLoading(false)
+        }, 1500);
+    }, [])
 
     useEffect(()=>{
         setRandomTeamsList(prevList => prevList.sort(()=>0.5 - Math.random()))
@@ -192,15 +200,21 @@ export function Football () {
         )
     })
     return (
-        <div className="football-page">
-            <div className="football-cont">
-                <div className="teams">
-                    {teamsRender}
-                </div>
+        <>
+            {
+                loading
+                && <Loading/>
+            }
+            <div className="football-page">
+                <div className="football-cont">
+                    <div className="teams">
+                        {teamsRender}
+                    </div>
 
-                <button className="next" onClick={next}>Next</button>
+                    <button className="next" onClick={next}>Next</button>
+                </div>
+                <ConfirmModalSingle/>
             </div>
-            <ConfirmModalSingle/>
-        </div>
+        </>
     )
 }

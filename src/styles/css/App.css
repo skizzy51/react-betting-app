@@ -5,6 +5,30 @@
   font-family: "Lexend Deca", sans-serif;
 }
 
+.loading {
+  width: 100vw;
+  height: 100vh;
+  background-color: rgba(0, 0, 0, 0.418);
+  position: absolute;
+  z-index: 100;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.loading .loading-cont {
+  width: 15vw;
+  height: 10vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.loading .loading-cont div {
+  background-color: white;
+  width: 1rem;
+  border-radius: 3rem;
+  margin: 0 0.5rem;
+}
+
 .navbar {
   background-color: rgba(0, 0, 0, 0.415);
   height: 10vh;
@@ -55,6 +79,11 @@
   background-color: #005829;
 }
 
+@media (max-width: 425px) {
+  .loading .loading-cont {
+    width: 25vw;
+  }
+}
 @media (max-width: 768px) {
   .navbar {
     padding: 0.5rem 1rem;

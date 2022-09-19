@@ -202,7 +202,8 @@
   margin-top: 2rem;
 }
 .horse-racing-page .confirm-bet-open .confirm-bet-cont .body .price-ranges button {
-  padding: 0.7rem 1rem;
+  width: 20%;
+  height: 3rem;
   cursor: pointer;
 }
 .horse-racing-page .confirm-bet-open .confirm-bet-cont .odds-win {

@@ -1,4 +1,5 @@
 import { useEffect, useRef, useState } from 'react'
+import { Loading } from '../components/Loading'
 import axios from 'axios'
 import '../styles/css/Sign-in.css'
 
@@ -11,6 +12,13 @@ export function SignInPage () {
     const signInCont = useRef()
     const signUpCont = useRef()
     const token = sessionStorage.getItem('token')
+    const [loading, setLoading] = useState(true)
+
+    useEffect(()=>{
+        setTimeout(() => {
+            setLoading(false)
+        }, 2000);
+    }, [])
 
     useEffect(()=>{
         async function verifyUser () {
@@ -100,41 +108,47 @@ export function SignInPage () {
     }
 
     return (
-        <div className="sign-in-page">
-            <div className='sign-in-cont' ref={signInCont}>
-                <h3>Sign In</h3>
-                <form className='sign-in' id='form1' style={{padding : '5rem 2rem'}}>
-                    <div className='input-cont'>
-                        <b>Enter username :</b>
-                        <input onChange={(e)=>setUserName(e.target.value)} type='text' placeholder='Username' />
-                    </div>
-                    <div className='input-cont'>
-                        <b>Enter password :</b>
-                        <input onChange={(e)=>setPassword(e.target.value)} type='password' placeholder='Password' />
-                    </div>
-                    <button onClick={signIn} type='button' className='sign-in-button'>Sign In</button>
-                    <p>Don't have an account?&nbsp;<span onClick={goToSignUp}>Sign up</span></p>
-                </form>
+        <>
+            {
+                loading
+                && <Loading/>
+            }
+            <div className="sign-in-page">
+                <div className='sign-in-cont' ref={signInCont}>
+                    <h3>Sign In</h3>
+                    <form className='sign-in' id='form1' style={{padding : '5rem 2rem'}}>
+                        <div className='input-cont'>
+                            <b>Enter username :</b>
+                            <input onChange={(e)=>setUserName(e.target.value)} type='text' placeholder='Username' />
+                        </div>
+                        <div className='input-cont'>
+                            <b>Enter password :</b>
+                            <input onChange={(e)=>setPassword(e.target.value)} type='password' placeholder='Password' />
+                        </div>
+                        <button onClick={signIn} type='button' className='sign-in-button'>Sign In</button>
+                        <p>Don't have an account?&nbsp;<span onClick={goToSignUp}>Sign up</span></p>
+                    </form>
+                </div>
+                <div className='sign-up-cont' ref={signUpCont}>
+                    <h3>Sign Up</h3>
+                    <form className='sign-in' id='form2' style={{padding : '3rem 2rem'}}>
+                        <div className='input-cont'>
+                            <b>Enter username :</b>
+                            <input onChange={(e)=>setCreateUsername(e.target.value)} type='text' placeholder='Username' />
+                        </div>
+                        <div className='input-cont'>
+                            <b>Enter password :</b>
+                            <input onChange={(e)=>setCreatePassword1(e.target.value)} type='password' placeholder='Password' />
+                        </div>
+                        <div className='input-cont'>
+                            <b>Re-enter password :</b>
+                            <input onChange={(e)=>setCreatePassword2(e.target.value)} type='password' placeholder='Password' />
+                        </div>
+                        <button onClick={signUp} type='button' className='sign-in-button'>Sign Up</button>
+                        <p>Already have an account?&nbsp;<span onClick={goToSignIn}>Sign In</span></p>
+                    </form>
+                </div>
             </div>
-            <div className='sign-up-cont' ref={signUpCont}>
-                <h3>Sign Up</h3>
-                <form className='sign-in' id='form2' style={{padding : '3rem 2rem'}}>
-                    <div className='input-cont'>
-                        <b>Enter username :</b>
-                        <input onChange={(e)=>setCreateUsername(e.target.value)} type='text' placeholder='Username' />
-                    </div>
-                    <div className='input-cont'>
-                        <b>Enter password :</b>
-                        <input onChange={(e)=>setCreatePassword1(e.target.value)} type='password' placeholder='Password' />
-                    </div>
-                    <div className='input-cont'>
-                        <b>Re-enter password :</b>
-                        <input onChange={(e)=>setCreatePassword2(e.target.value)} type='password' placeholder='Password' />
-                    </div>
-                    <button onClick={signUp} type='button' className='sign-in-button'>Sign Up</button>
-                    <p>Already have an account?&nbsp;<span onClick={goToSignIn}>Sign In</span></p>
-                </form>
-            </div>
-        </div>
+        </>
     )
 }

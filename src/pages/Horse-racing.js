@@ -1,4 +1,4 @@
-import { useContext, useState } from "react"
+import { useContext, useEffect, useState } from "react"
 import { motion } from "framer-motion"
 import { UserVerification } from "../functions/User-verification"
 import '../styles/css/Horse-racing.css'
@@ -7,11 +7,13 @@ import { FontAwesomeIcon } from "@fortawesome/react-fontawesome"
 import { RandomNumber } from "../functions/Random-number"
 import { Link } from "react-router-dom"
 import { Valuables } from "../App"
+import { Loading } from "../components/Loading"
 
 const intlFormat = new Intl.NumberFormat('en-US')
 export function HorseRacing () {
     UserVerification()
     const {user, guestCash} = useContext(Valuables)
+    const [loading, setLoading] = useState(true)
     const [singlePlacement, setSinglePlacement] = useState(false)
     const [overallPlacement, setOverallPlacement] = useState(false)
     const [confirmBet, setConfirmBet] = useState('confirm-bet-close')
@@ -31,10 +33,16 @@ export function HorseRacing () {
     const [overallHorse2, setOverallHorse2] = useState({ name : 'Henry', position : 1, number : 2 })
     const [overallHorse3, setOverallHorse3] = useState({ name : 'Gus', position : 1, number : 3 })
     const [overallHorse4, setOverallHorse4] = useState({ name : 'Julius', position : 1, number : 4 })
-
+    
     const overallHorseList = [overallHorse1, overallHorse2, overallHorse3, overallHorse4]
     const overallSelection = [...overallHorseList].sort((a,b) => a.position - b.position)
     
+    useEffect(()=>{
+        setTimeout(() => {
+            setLoading(false)
+        }, 2000);
+    }, [])
+
     function singleNext () {
         if (singleHorse.horse.length < 1) return alert('Please select a horse to place a bet')
         setConfirmBet('confirm-bet-open')
@@ -269,30 +277,44 @@ export function HorseRacing () {
     }
 
     return (
-        <div className="horse-racing-page">
+        <>
             {
-                !singlePlacement && !overallPlacement
-                ? <div className="racing-cont">
-                    <div className="head">
-                        <h1><u>Welcome to Steve Bet virtual Horse Racing</u></h1>
-                        <p>To play, place bets on positions you think horses would place in the race</p>
-                        <p>You can either bet on the winner of a single race or the overall placement of each horse in the race</p>
-                        <p>Betting on just the winner has less returns but betting on the overall placement has MASSIVE returns</p>
-                        <h2>LET'S RACE !!!</h2>
-                    </div>
-                    <div className="horse-bet-type">
-                        <button onClick={()=>{
-                            setSinglePlacement(true)
-                            setOverallPlacement(false)
-                        }}>Bet on single placement</button>
-                        <button onClick={()=>{
-                            setSinglePlacement(false)
-                            setOverallPlacement(true)
-                        }}>Bet on overall placement</button>
-                    </div>
-                </div>
-                : <Bet/>
+                loading
+                && <Loading/>
             }
-        </div>
+            <div className="horse-racing-page">
+                {
+                    !singlePlacement && !overallPlacement
+                    ? <div className="racing-cont">
+                        <div className="head">
+                            <h1><u>Welcome to Steve Bet virtual Horse Racing</u></h1>
+                            <p>To play, place bets on positions you think horses would place in the race</p>
+                            <p>You can either bet on the winner of a single race or the overall placement of each horse in the race</p>
+                            <p>Betting on just the winner has less returns but betting on the overall placement has MASSIVE returns</p>
+                            <h2>LET'S RACE !!!</h2>
+                        </div>
+                        <div className="horse-bet-type">
+                            <button onClick={()=>{
+                                setSinglePlacement(true)
+                                setOverallPlacement(false)
+                                setLoading(true)
+                                setTimeout(()=>{
+                                    setLoading(false)
+                                }, 3000)
+                            }}>Bet on single placement</button>
+                            <button onClick={()=>{
+                                setSinglePlacement(false)
+                                setOverallPlacement(true)
+                                setLoading(true)
+                                setTimeout(()=>{
+                                    setLoading(false)
+                                }, 3000)
+                            }}>Bet on overall placement</button>
+                        </div>
+                    </div>
+                    : <Bet/>
+                }
+            </div>
+        </>
     )
 }

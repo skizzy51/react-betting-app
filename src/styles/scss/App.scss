@@ -8,6 +8,28 @@
     font-family: 'Lexend Deca', sans-serif;
 }
 
+.loading{
+    width: 100vw;
+    height: 100vh;
+    background-color: rgba(0, 0, 0, 0.418);
+    position: absolute;
+    z-index: 100;
+    @include justify-content(center);
+
+    .loading-cont{
+        width: 15vw;
+        height: 10vh;
+        @include justify-content(center);
+
+        & div{
+            background-color:white;
+            width: 1rem;
+            border-radius: 3rem;
+            margin: 0 .5rem;
+        }
+    }
+}
+
 .navbar{
     background-color: rgba(0, 0, 0, 0.415);
     height: 10vh;
@@ -58,6 +80,11 @@
     }
 }
 
+@media (max-width : 425px) {
+    .loading .loading-cont{
+        width: 25vw;
+    }
+}
 
 @media (max-width: 768px) {
     .navbar{
