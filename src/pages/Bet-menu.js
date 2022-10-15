@@ -46,7 +46,7 @@ export function BetMenu () {
                     style={{backgroundImage : 'url("images/noah-silliman-fxAo3DiMICI-unsplash.jpg")'}}
                     onClick={()=>window.location.assign('/horse-racing')}>
                         <h1>Horse Racing</h1>
-                        <p>Virtual Horse Races is a game in which players place bets on one or more of 8 horses that are racing on the track. Outcomes are the result of an electronic random number generator (RNG).</p>
+                        <p>Virtual Horse Racing is a game in which players place bets on one or more of 8 horses that are racing on the track. Outcomes are the result of an electronic random number generator (RNG).</p>
                     </motion.div>
                 </div>
             </div>
