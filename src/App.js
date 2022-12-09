@@ -42,7 +42,7 @@ function App() {
 
   useEffect(()=>{
     async function getUser () {
-      await axios.get('https://steve-betting-app.herokuapp.com/app/user', {
+      await axios.get('https://betting-app-backend.vercel.app/app/user', {
         headers : { 'authorization' : `Bearer ${JSON.parse(token)}` }
       }).then(res => setUser(res.data)).catch(err => {return})
     }

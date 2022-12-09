@@ -54,11 +54,6 @@ export function Navbar () {
                                         : <div onClick={()=>window.location.assign('/deposit')} className='dropdown-btn' >Deposit</div>
                                     }
                                     <div className='dropdown-btn' onClick={logout}>Logout</div>
-                                    {/* {
-                                        JSON.parse(token).value === 'guest'
-                                        ? null
-                                        : <div className='dropdown-btn'>Delete account</div>
-                                    } */}
                                 </div>
                             </div>
                         }

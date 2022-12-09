@@ -2,7 +2,7 @@ import axios from "axios"
 
 export async function Credit (amount) {
     const token = sessionStorage.getItem('token')
-    let response = await axios.post('https://steve-betting-app.herokuapp.com/app/deposit', {amount : Number(amount)}, {
+    let response = await axios.post('https://betting-app-backend.vercel.app/app/deposit', {amount : Number(amount)}, {
         headers : { 'authorization' : `Bearer ${JSON.parse(token)}` }
     }).then(res => res.data).catch(err => {return})
 
@@ -11,7 +11,7 @@ export async function Credit (amount) {
 
 export async function Debit (amount) {
     const token = sessionStorage.getItem('token')
-    let response = await axios.post('https://steve-betting-app.herokuapp.com/app/debit', {amount : Number(amount)}, {
+    let response = await axios.post('https://betting-app-backend.vercel.app/app/debit', {amount : Number(amount)}, {
         headers : { 'authorization' : `Bearer ${JSON.parse(token)}` }
     }).then(res => res.data).catch(err => {return})
 

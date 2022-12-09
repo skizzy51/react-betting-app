@@ -9,7 +9,7 @@ export async function UserVerification () {
     if (JSON.parse(token).value === 'guest' && JSON.parse(token).expires > new Date().getTime()) {
         return
     }
-    let response = await axios.get('https://steve-betting-app.herokuapp.com/app/user', {
+    let response = await axios.get('https://betting-app-backend.vercel.app/app/user', {
         headers : { 'authorization' : `Bearer ${JSON.parse(token)}` }
     }).then(res => res.data).catch(err => {return})
 

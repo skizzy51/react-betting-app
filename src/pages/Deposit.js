@@ -24,7 +24,7 @@ export function Deposit () {
     }, [])
 
     async function pay () {
-        let response = await axios.post('https://steve-betting-app.herokuapp.com/app/deposit', {amount : Number(amount)}, {
+        let response = await axios.post('https://betting-app-backend.vercel.app/app/deposit', {amount : Number(amount)}, {
             headers : { 'authorization' : `Bearer ${JSON.parse(token)}` }
         }).then(res => res.data).catch(err => {return})
         

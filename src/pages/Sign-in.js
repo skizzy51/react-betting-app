@@ -22,7 +22,7 @@ export function SignInPage () {
 
     useEffect(()=>{
         async function verifyUser () {
-            let response = await axios.get('https://steve-betting-app.herokuapp.com/app/user', {
+            let response = await axios.get('https://betting-app-backend.vercel.app/app/user', {
                 headers : { 'authorization' : `Bearer ${token}` }
             }).then(res => res.data).catch(err => {return})
 
@@ -50,7 +50,7 @@ export function SignInPage () {
             password : password
         }
 
-        let response = await axios.post('https://steve-betting-app.herokuapp.com/app/login', data, {
+        let response = await axios.post('https://betting-app-backend.vercel.app/app/login', data, {
             headers : { 'Content-Type' : 'application/json' }
         }).then(res => res.data).catch(err => {return})
 
@@ -76,7 +76,7 @@ export function SignInPage () {
                 username : createUsername,
                 password : createPassword1
             }
-            let response = await axios.post('https://steve-betting-app.herokuapp.com/app/user', data, {
+            let response = await axios.post('https://betting-app-backend.vercel.app/app/user', data, {
                 headers : { 'Content-Type' : 'application/json' }
             }).then(res => res.data).catch(err => {return})
 
